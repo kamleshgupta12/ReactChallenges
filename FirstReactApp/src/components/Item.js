@@ -1,8 +1,8 @@
 import "./Item.css"
 function Item(props){
-    const details = props.details;
+    const BrandName = props.details;
     return (
-        <h1>{details}</h1>
+        <h1>{BrandName}</h1>
         
     );
 }
