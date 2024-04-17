@@ -1,5 +1,3 @@
-
-
 import './Date.css';
 
 function Date(props){
