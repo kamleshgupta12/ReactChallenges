@@ -24,6 +24,12 @@ function App() {
       n: "harvan",
       c: "MCA",
       y: "2033"
+    },
+    {
+      status: "Data3",
+      n: "harvan",
+      c: "MCA",
+      y: "2033"
     }
   ]
   return (
