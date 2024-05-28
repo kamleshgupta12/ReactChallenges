@@ -21,7 +21,6 @@ function titleChangeHandler(event){
 <div className='Cart'>
     <button >Add To Cart</button>
 </div>
-
 </form>
 
     )
