@@ -7,7 +7,7 @@ import CardContainer from './components/CardContainer';
 
 function App() {
   const [tour, setTour]= useState(tourData);
-  console.log(tour,"ariff");
+  // console.log(tour,"ariff");
   function removeCard(id){
     const newTour = tour.filter(tour=> tour.id!==id);
     setTour(newTour); 
