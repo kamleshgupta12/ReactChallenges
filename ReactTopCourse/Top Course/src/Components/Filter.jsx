@@ -5,7 +5,7 @@ const Filter = ({ filterData }) => {
    console.log(Filter, "dataa");
    return (
       <>
-         <div className="flex items-center justify-center gap-5 pt-[10px] ">
+         <div className="flex items-center justify-center gap-5 flex-wrap pt-[10px] ">
             {
                filterData.map((data) => {
                   return (

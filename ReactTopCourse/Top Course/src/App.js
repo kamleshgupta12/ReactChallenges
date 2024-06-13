@@ -36,7 +36,7 @@ function App() {
       <div>
         <Navbar />
       </div>
-      <div className='  space-y-3 '>
+      <div className='space-y-3 '>
         <div className='  '>
           <Filter filterData={filterData} />
         </div>
@@ -48,6 +48,7 @@ function App() {
       </div>
 
     </div>
+    
   );
 }
 
