@@ -12,6 +12,7 @@ function App() {
 
   const [couses, setCourse] = useState([])
   const [loading, setLoading] = useState(true)
+  const [category, setCategory]=useState(filterData[0].title);
 
   async function fetchData() {
     setLoading(true)
@@ -38,11 +39,11 @@ function App() {
       </div>
       <div className='space-y-3 '>
         <div className='  '>
-          <Filter filterData={filterData} />
+          <Filter filterData={filterData} category={category} setCategory={setCategory} />
         </div>
         <div>
           {
-            loading ? (<Spiner />) : (<Cards couses={couses} />)
+            loading ? (<Spiner />) : (<Cards couses={couses} category={category} />)
           }
         </div>
       </div>
