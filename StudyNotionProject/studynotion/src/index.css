@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 100vh;
 }
 
 code {
@@ -15,3 +17,10 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.img{
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}

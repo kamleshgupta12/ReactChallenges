@@ -20,19 +20,34 @@ function Nav(props) {
                     </ul>
                 </nav>
                 <div className='flex gap-2'>
-                    { !logged &&
-                        <button onClick={()=>{setLogged(false)
-                            toast.success("logout")
-                        }}>Login</button>
+                    {
+                        !logged &&
+                        <Link to="/login">
+                            <button >
+                                Login
+                            </button>
+                        </Link>
                     }
-                    { !logged &&
-                        <button>SignUp</button>
+                    {
+                        !logged &&
+                        <Link to="/signup">
+                            <button>SignUp</button>
+                        </Link>
                     }
-                    { logged &&
-                        <button>Logout</button>
+                    {
+                        logged &&
+                        <Link to="/">
+                            <button onClick={() => {
+                                setLogged(false)
+                                toast.success("logout")
+                            }}>Logout</button>
+                        </Link>
                     }
-                    { logged &&
-                        <button>Dashboard</button>
+                    {
+                        logged &&
+                        <Link to="dashboard">
+                            <button>Dashboard</button>
+                        </Link>
                     }
                 </div>
             </div>
