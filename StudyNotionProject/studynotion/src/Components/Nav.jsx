@@ -8,7 +8,7 @@ function Nav(props) {
     const setLogged = props.setLogged;
     return (
         <>
-            <div className='flex items-center  justify-between w-[100%] m-auto h-[80px] bg-slate-500 p-2 px-9'>
+            <div className='flex items-center   justify-between w-[100%] m-auto h-[80px] bg-[#d9d9d9a5] p-2 px-9'>
                 <div className=''>
                     <img className='w-[70px] h-[70px] rounded-full  ' src={require('../images/logo.png')} />
                 </div>
@@ -23,7 +23,7 @@ function Nav(props) {
                     {
                         !logged &&
                         <Link to="/login">
-                            <button >
+                            <button className='border font-bold p-2 px-4 border-[#761bff] text-[#761bff] bg-white  hover:bg-[#761bff] hover:text-white rounded-lg'>
                                 Login
                             </button>
                         </Link>
@@ -31,13 +31,13 @@ function Nav(props) {
                     {
                         !logged &&
                         <Link to="/signup">
-                            <button>SignUp</button>
+                            <button className='border font-bold p-2 px-4 border-[#761bff] text-[#761bff] bg-white  hover:bg-[#761bff] hover:text-white rounded-lg'>SignUp</button>
                         </Link>
                     }
                     {
                         logged &&
                         <Link to="/">
-                            <button onClick={() => {
+                            <button className='border font-bold p-2 px-4 border-[#761bff] text-[#761bff] bg-white  hover:bg-[#761bff] hover:text-white rounded-lg' onClick={() => {
                                 setLogged(false)
                                 toast.success("logout")
                             }}>Logout</button>
@@ -45,8 +45,8 @@ function Nav(props) {
                     }
                     {
                         logged &&
-                        <Link to="dashboard">
-                            <button>Dashboard</button>
+                        <Link to="/dashboard">
+                            <button className='border font-bold p-2 px-4 border-[#761bff] text-[#761bff] bg-white  hover:bg-[#761bff] hover:text-white rounded-lg'>Dashboard</button>
                         </Link>
                     }
                 </div>

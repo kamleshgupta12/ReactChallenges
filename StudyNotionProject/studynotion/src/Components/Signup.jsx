@@ -1,11 +1,11 @@
 import Tamplate from "./Tamplate";
-import sign from '../images/signup.png'
+import sign from '../images/signup-bg.png'
 
 
 function Signup({setLogged}){
     return(<>
     <Tamplate
-    title="this is a demo title sign up page"
+    title="Welcome to"
     des1="it also demo description "
     des2="same to des1 demo description "
     img={sign}

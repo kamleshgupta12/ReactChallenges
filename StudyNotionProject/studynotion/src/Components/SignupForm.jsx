@@ -1,20 +1,19 @@
-import { useState } from "react";
-
+import { useState, } from "react";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-
-
-
-function SignupForm() {
+function SignupForm({ setLogged }) {
     const [formData, setformData] = useState({
         firstName: "",
         lastName: "",
         email: "",
-        createPassword: "",
+        password: "",
         confirmPassword: ""
     })
 
     const [showpass, setShowPass] = useState(false)
-    const [showpass2,setShowPass2]=useState(false);
+    const [showpass2, setShowPass2] = useState(false);
+    const navigate = useNavigate();
 
     function changeHandler(event) {
         setformData((preData) => (
@@ -24,22 +23,40 @@ function SignupForm() {
             }
         ))
     }
+    function submitHandler(e) {
+        e.preventDefault();
+        if (formData.password != formData.confirmPassword) {
+            toast.error("password do not match");
+            return;
+        }
+        else {
+            setLogged(true);
+            toast.success("Acount created")
+            const data = {
+                ...formData
+            }
+            console.log(data, ">>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+            navigate("/dashboard")
+
+        }
+    }
     return (
         <>
             <div>
-                <div>
-                    <button>Student</button>
-                    <button>Instructor</button>
+                <div className="border bg-[#e7e7e7c5] rounded-3xl flex w-[165px] justify-center items-center">
+                    <button className=" rounded-3xl w-[100%] py-2  bg-[#6652ff] text-white">Student</button>
+                    <button className=" rounded-3xl w-[100%] py-2  ">Instructor</button>
                 </div>
-                <form>
+                <form onSubmit={submitHandler} className="mt-1">
 
                     {/* <<<<<<<<<<<<<< FirstName-LastName >>>>>>>>>>>>>>> */}
 
 
-                    <div>
+                    <div className="flex gap-2 ">
                         <label>
-                            <span>First Name <sup>*</sup></span>
+                            <span className="text-[13px]">First Name <sup>*</sup></span>
                             <input type="text"
+                                className="border m-1 p-2 rounded-lg border-b-[2px] outline-none border-b-[#761bff] w-[100%]"
                                 required
                                 name="firstName"
                                 value={formData.firstName}
@@ -48,8 +65,9 @@ function SignupForm() {
                             />
                         </label>
                         <label>
-                            <span>Last Name <sup>*</sup></span>
+                            <span className="text-[13px]">Last Name <sup>*</sup></span>
                             <input type="text"
+                                className="border m-1 p-2 rounded-lg border-b-[2px] outline-none border-b-[#761bff] w-[100%]"
                                 required
                                 name="lastName"
                                 value={formData.lastName}
@@ -62,9 +80,10 @@ function SignupForm() {
                     {/* <<<<<<<<<<<<<<<<<<<<<<<<<< email Address >>>>>>>>>>>>>>>>>>>>>  */}
 
 
-                    <label>
-                        <span>Email<sup>*</sup></span>
+                    <label className="flex flex-col">
+                        <span className="text-[13px]">Email<sup>*</sup></span>
                         <input type="text"
+                                className="border m-1 p-2 rounded-lg border-b-[2px] outline-none border-b-[#761bff] w-[100%]"
                             required
                             name="email"
                             value={formData.email}
@@ -77,10 +96,11 @@ function SignupForm() {
 
 
 
-                    <div>
-                        <label>
-                            <span>Create Password <sup>*</sup></span>
+                    <div className="flex gap-2">
+                        <label className="relative">
+                            <span className="text-[13px]">Create Password <sup>*</sup></span>
                             <input
+                                className="border m-1 p-2 rounded-lg border-b-[2px] outline-none border-b-[#761bff] w-[100%] pr-7"
                                 type={showpass ? ("text") : ("password")}
                                 required
                                 name="password"
@@ -88,13 +108,14 @@ function SignupForm() {
                                 placeholder="Enter Password"
                                 onChange={changeHandler}
                             />
-                            <span onClick={()=>setShowPass((pre) => !pre)}>
+                            <span className="absolute top-10 right-0 text-[22px]" onClick={() => setShowPass((pre) => !pre)}>
                                 {showpass ? (<AiOutlineEye />) : (<AiOutlineEyeInvisible />)}
                             </span>
                         </label>
-                        <label>
-                            <span>Confirm Password <sup>*</sup></span>
+                        <label className="relative">
+                            <span className="text-[13px]">Confirm Password <sup>*</sup></span>
                             <input
+                                className="border m-1 p-2 rounded-lg border-b-[2px] outline-none border-b-[#761bff] w-[100%] pr-7"
                                 type={showpass2 ? ("text") : ("password")}
                                 required
                                 name="confirmPassword"
@@ -102,16 +123,13 @@ function SignupForm() {
                                 placeholder="Enter Confirm Password"
                                 onChange={changeHandler}
                             />
-                            <span onClick={()=>setShowPass2((pre)=> !pre)}>
-                             {showpass2 ? (<AiOutlineEye />) : (<AiOutlineEyeInvisible />)}
-                            </span>
-                            {/* <span onClick={()=>setShowPass2((pre) => !pre)}>
+                            <span className="absolute top-10 right-0 text-[22px]" onClick={() => setShowPass2((pre) => !pre)}>
                                 {showpass2 ? (<AiOutlineEye />) : (<AiOutlineEyeInvisible />)}
-                            </span> */}
+                            </span>
                         </label>
                     </div>
-                    <div>
-                        <button>Create Acount</button>
+                    <div className="flex justify-center items-center mt-1 ">
+                        <button className="border w-[100%]  font-bold mx-1 rounded-lg p-2 bg-[#761bff] text-white">Create Acount</button>
                     </div>
                 </form>
             </div>

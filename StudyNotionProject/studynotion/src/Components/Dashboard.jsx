@@ -5,8 +5,8 @@
 function Dashboard(){
     return(
         <>
-       this is Dashboard
+        <h1> Welcome to Dashboard </h1>
         </>
     )
 }
-export default Dashboard;
+export default Dashboard;   

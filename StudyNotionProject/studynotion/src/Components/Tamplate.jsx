@@ -1,35 +1,37 @@
 import SignupForm from "./SignupForm";
 import LoginForm from "./LoginForm";
+import { FcGoogle } from "react-icons/fc";
+
 
 function Tamplate({ title, des1, des2, img, formType, setLogged }) {
-    return (
+    return ( 
         <>
-            <div className="h-[70vh] max-w-[80%] flex  justify-center items-center bg-[#b1afafc8] m-auto">
-                <div className="border  ">
+            <div className="p-5   flex  justify-center items-center sm:flex-col md:flex-row bg-[#dddbdb5e] m-auto rounded-3xl mt-2 ">
+                <div className="">
                     <img className=" w-[500px] h-[400px] " src={img} />
                 </div>
-                <div className=" w-[450px] h-[400px] border flex flex-col gap-3 justify-center items-center ">
+                <div className=" w-[400px] border flex flex-col gap-3 rounded-md  bg-[#ffffff]  shadow-md p-3 ">
                     <div>
-                        <h1 className="text-[30px] font-medium text-[white]">{title}</h1>
+                        <h1 className="text-[30px] font-bold text-[#761bff]">{title}</h1>
                     </div>
-                    <div>
-                        <span>{des1}</span>
-                        <span>{des2}</span>
+                    <div className="flex flex-col">
+                        <div className="text-[#999]">{des1}</div>
+                        <div className="text-[#999]">{des2}</div>
                     </div>
                     <div>
                         {
                             formType === "signup"
-                                ? (<SignupForm />)
-                                : (<LoginForm />)
+                                ? (<SignupForm setLogged={setLogged} />)
+                                : (<LoginForm setLogged={setLogged} />)
                         }
                     </div>
-                    <div>
-                        <div></div>
-                        <span>OR</span>
-                        <div></div>
+                    <div className="flex justify-center items-center">
+                        <div className="w-[150px] h-[1px] bg-[#999]"></div>
+                        <span className="mx-1 font-mono">OR</span>
+                        <div className="w-[150px] h-[1px] bg-[#999]"></div>
                     </div>
-                    <div>
-                        <button>Sign up with google</button>
+                    <div className="flex justify-center items-center">
+                        <button className="flex justify-center items-center gap-2 border text-[16px] p-1 rounded-3xl px-2 text-[#333] hover:bg-[#c4c4c4a3]"> <span><FcGoogle /></span>Sign up with google</button>
                     </div>
                 </div>
             </div>

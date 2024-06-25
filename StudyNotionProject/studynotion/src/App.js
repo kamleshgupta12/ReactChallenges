@@ -5,6 +5,7 @@ import Login from './Components/Login';
 import Signup from './Components/Signup';
 import Nav from './Components/Nav'
 import { useState } from 'react';
+import Dashboard from './Components/Dashboard';
 function App() {
   const [logged, setLogged] = useState(false)
   return (
@@ -13,8 +14,9 @@ function App() {
         <Nav logged={logged} setLogged={setLogged} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/signup' element={<Signup />} />
+          <Route path='/login' element={<Login setLogged={setLogged} />} />
+          <Route path='/signup' element={<Signup setLogged={setLogged} />} />
+          <Route path='/dashboard' element={<Dashboard />} />
         </Routes>
       </div>
     </>
