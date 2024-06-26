@@ -5,9 +5,9 @@ function Login({ setLogged }) {
     <>
       <div className=' mt-[50px]'>
         <Tamplate
-          title="Welcome to"
-          des1="it also demo description "
-          des2="same to des1 demo description "
+          title="Welcome Back"
+          des1="Build skills for today, tomorrow, and beyond. "
+          des2="Education to future-proof your career."
           img={log}
           formType="login"
           setLogged={setLogged}

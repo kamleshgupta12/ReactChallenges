@@ -13,6 +13,7 @@ function SignupForm({ setLogged }) {
 
     const [showpass, setShowPass] = useState(false)
     const [showpass2, setShowPass2] = useState(false);
+    const [acountType, setAcountType]=useState("student");
     const navigate = useNavigate();
 
     function changeHandler(event) {
@@ -33,7 +34,7 @@ function SignupForm({ setLogged }) {
             setLogged(true);
             toast.success("Acount created")
             const data = {
-                ...formData
+                ...formData,acountType
             }
             console.log(data, ">>>>>>>>>>>>>>>>>>>>>>>>>>>>");
             navigate("/dashboard")
@@ -44,8 +45,8 @@ function SignupForm({ setLogged }) {
         <>
             <div>
                 <div className="border bg-[#e7e7e7c5] rounded-3xl flex w-[165px] justify-center items-center">
-                    <button className=" rounded-3xl w-[100%] py-2  bg-[#6652ff] text-white">Student</button>
-                    <button className=" rounded-3xl w-[100%] py-2  ">Instructor</button>
+                    <button className={`${acountType=== "student" ? "rounded-3xl w-[100%] py-2  bg-[#6652ff] text-white font-medium" : "px-3 text-[#333] font-medium transition-all duration-200"}`} onClick={()=>setAcountType('student')}>Student</button>
+                    <button className={`${acountType=== "instructor" ? "rounded-3xl w-[100%] py-[8px]  bg-[#6652ff] text-white  font-medium" : "px-3 text-[#333] font-medium transition-all duration-200"}`} onClick={()=>setAcountType('instructor')}>Instructor</button>
                 </div>
                 <form onSubmit={submitHandler} className="mt-1">
 

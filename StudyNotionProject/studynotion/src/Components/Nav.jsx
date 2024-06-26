@@ -10,7 +10,7 @@ function Nav(props) {
         <>
             <div className='flex items-center   justify-between w-[100%] m-auto h-[80px] bg-[#d9d9d9a5] p-2 px-9'>
                 <div className=''>
-                    <img className='w-[70px] h-[70px] rounded-full  ' src={require('../images/logo.png')} />
+                    <span className='font-black text-[25px] text-[#761bff]'>College Space</span>
                 </div>
                 <nav>
                     <ul className='flex '>

@@ -10,13 +10,13 @@ function Tamplate({ title, des1, des2, img, formType, setLogged }) {
                 <div className="">
                     <img className=" w-[500px] h-[400px] " src={img} />
                 </div>
-                <div className=" w-[400px] border flex flex-col gap-3 rounded-md  bg-[#ffffff]  shadow-md p-3 ">
+                <div className=" w-[450px] border flex flex-col gap-3 rounded-md  bg-[#ffffff]  shadow-md p-3 ">
                     <div>
-                        <h1 className="text-[30px] font-bold text-[#761bff]">{title}</h1>
+                        <h1 className="text-[25px] font-bold text-[#761bff]">{title}</h1>
                     </div>
                     <div className="flex flex-col">
-                        <div className="text-[#999]">{des1}</div>
-                        <div className="text-[#999]">{des2}</div>
+                        <div className="text-[#000000] text-[18px]">{des1}</div>
+                        <div className="text-[#177810] text-[15px] italic">{des2}</div>
                     </div>
                     <div>
                         {
