@@ -11,7 +11,7 @@ function App() {
   const [logged, setLogged] = useState(false)
   return (
     <>
-      <div className=" ">
+      <div className=" w-screen h-screen">
         <Nav logged={logged} setLogged={setLogged} />
         <Routes>
           <Route path="/" element={<Home />} />
