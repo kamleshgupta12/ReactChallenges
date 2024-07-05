@@ -6,13 +6,12 @@ import { myContext } from "../App";
  function SingleList({item, id}){
    
     const [toggle, setToggle] = useState(false)
-    const {edit,setEdit}=useContext(myContext)
+    // const {edit,setEdit}=useContext(myContext)
     const handleDot = () =>{
         console.log("clicked");
-        setEdit(true)
+        setToggle(!toggle)
 
     }
-    console.log(edit,"demo");
     return(
         <>
          <div className="border flex items-center justify-between gap-4 p-5 h-[60px] mt-4 rounded-md">
@@ -31,7 +30,7 @@ import { myContext } from "../App";
 
                             </div>
                             <div>
-                               {edit&&<Editmodule />} 
+                               {toggle&& <Editmodule />} 
                             </div>
         </>
     )
