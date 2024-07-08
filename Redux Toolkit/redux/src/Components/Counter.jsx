@@ -4,6 +4,7 @@ import { decrement,increment } from "../redux/CounterSlice";
 
 function Counter() {
     const count = useSelector((state) => state.counter.value);
+    console.log();
     const dispatch = useDispatch()
     console.log(count, "1000000000000000");
     return (
