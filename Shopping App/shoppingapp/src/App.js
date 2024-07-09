@@ -5,7 +5,7 @@ import { Cart } from './Components/Cart';
 
 function App() {
   return (
-    <>
+    <div className='w-[100%] h-screen'>
       <div>
         <NavBar />
       </div>
@@ -13,7 +13,7 @@ function App() {
         <Route path="/" element={<Home />} ></Route>
         <Route path='/cart' element={<Cart/>}></Route>
       </Routes>
-    </>
+    </div>
   );
 }
 

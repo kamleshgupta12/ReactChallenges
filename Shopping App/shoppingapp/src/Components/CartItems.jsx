@@ -12,9 +12,9 @@ const dispatch = useDispatch();
 // console.log(id,'kkkkkkkkkkkkkkkkkkkkkk');
 //   }
   return (
-    <div>
+    <div className='border  '> 
       <div>
-        <img src={item.image} alt="" />
+        <img className='w-[100px]' src={item.image} alt="" />
       </div>
       <div>
         <p>{item.title}</p>

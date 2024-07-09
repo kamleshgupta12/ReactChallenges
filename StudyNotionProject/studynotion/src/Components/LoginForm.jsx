@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { SiEthers } from "react-icons/si";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 
-function LoginForm({setLogged}) {
+function LoginForm({ setLogged }) {
     const [showpass, setShowPass] = useState(false)
     const [formData, setformData] = useState({ email: "", password: "" })
     const nevigate = useNavigate();
@@ -20,7 +20,7 @@ function LoginForm({setLogged}) {
         e.preventDefault()
         setLogged(true);
         toast.success("Logged in")
-        
+
         nevigate("/dashboard")
     }
     return (
@@ -28,8 +28,8 @@ function LoginForm({setLogged}) {
             <form onSubmit={submitHandler} className="">
                 <label className="flex flex-col">
                     <span className="text-[13px]">Email Address <sup>*</sup></span>
-                    <input 
-                    className="border m-1 p-2 rounded-lg border-b-[2px] outline-none border-b-[#761bff]"
+                    <input
+                        className="border m-1 p-2 rounded-lg border-b-[2px] outline-none border-b-[#761bff]"
                         required
                         type="text"
                         name="email"
@@ -52,10 +52,10 @@ function LoginForm({setLogged}) {
                     <span className="absolute top-10 right-3 text-[22px]" onClick={() => setShowPass((pre) => !pre)}>
                         {
                             showpass
-                            ?(<AiOutlineEye />)
-                            : (<AiOutlineEyeInvisible />)
-                              
-                               
+                                ? (<AiOutlineEye />)
+                                : (<AiOutlineEyeInvisible />)
+
+
                         }
                     </span>
                     <Link to="#">

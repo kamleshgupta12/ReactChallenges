@@ -16,23 +16,23 @@ export const Card = ({ product }) => {
     // console.log(product);
     return (
         <div>
-            <div className='flex flex-col border p-4 items-center justify-center  justify-between'>
+            <div className=' bg-[#fbfafa] flex flex-col border h-[400px] w-[280px] justify-center  items-center justify-between p-3 rounded-md hover:shadow-lg hover:bg-white'>
                 <div>
-                    <p>{product.title}</p>
+                    <p className='font-bold '>{product.title.split(" ").slice(0,3).join(" ")}...</p>
+                </div >  
+                <div className='' >
+                    <p className='text-[13px] font-sans text-center '>{product.description.split(" ").slice(0,10).join(" ")}...</p>
                 </div>
                 <div>
-                    <p>{product.description.substring(0, 52)}...</p>
+                    <img className='w-[120px]' src={product.image} alt="" />
                 </div>
-                <div>
-                    <img className='w-[150px]' src={product.image} alt="" />
-                </div>
-                <div className='flex  items-center justify-between'>
-                    <p>{product.price}</p>
+                <div className='flex gap-[85px]'>
+                    <div><p className='font-bold text-green-600'>₹{product.price}</p></div>
                     <div >
                         {
                             cart.some((presentId) => presentId.id == product.id)
-                                ? (<button onClick={removeItem}> Remove Item</button>)
-                                : (<button onClick={addItem}> Add To Cart</button>)
+                                ? (<button className='border-slate-800 border-[2px] font-normal pl-2 pr-2 rounded-xl w-[130px] hover:bg-slate-800 hover:text-[white]' onClick={removeItem}> Remove Item</button>)
+                                : (<button className='border-slate-800 border-[2px] font-normal pl-2 pr-2 rounded-xl w-[130px]  hover:bg-slate-800 hover:text-[white]' onClick={addItem}> Add To Cart</button>)
                         }
                     </div>
                 </div>

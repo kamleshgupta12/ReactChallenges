@@ -14,7 +14,7 @@ export const Home = () => {
       const result = await fetch(API_URL);
       const data = await result.json();
       setProducts(data)
-      // console.log(data,">>>>");
+      console.log(data,">>>>");
     }
     catch {
       console.log("Somethings wnt wrong........");
@@ -29,11 +29,11 @@ export const Home = () => {
   return (
     <div>
       <div>
-        <div>
+        <div className='bg-[#fbfafa]  w-[100%] h-[90vh] flex justify-center items-center mt-[50px] mb-5'>
           {
             loader ? (<Spinner />) : (products.length === 0 ? (<div></div>)
               : (
-                <div className='flex flex-wrap'>
+                <div className='flex flex-wrap justify-center items-center gap-5  h-[90vh] '>
                   {
                     products.map((product) => (
                       (<Card product={product} key={product.id} />)
