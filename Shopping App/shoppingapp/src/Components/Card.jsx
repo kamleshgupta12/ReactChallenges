@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Add, Remove } from '../Redux/Slice/CartSlice';
+import toast from 'react-hot-toast';
 export const Card = ({ product }) => {
     // const [selected, setSelected] = useState(false)
     const { cart } = useSelector((state) => state)
     const dispatch = useDispatch();
     function removeItem() {
         dispatch(Remove(product.id))
+        toast.error("Removed")
     }
     function addItem() {
         dispatch(Add(product))
+        toast.success("Item Add Successfully")
         console.log(product, "kamleshhhhhhhhhhhhhhhhh");
     }
 

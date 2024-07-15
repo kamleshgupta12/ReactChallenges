@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { CartItems } from './CartItems';
+import toast from 'react-hot-toast';
 
 export const Cart = () => {
   const { cart } = useSelector((state) => state);
@@ -12,7 +13,7 @@ export const Cart = () => {
     setTotalAmount(cart.reduce((curr, accu) => curr + accu.price, 0));
   }, [cart])
   function checkoutHandler() {
-    alert("this Facility has been Temporary Blocked ")
+    toast.error("Comming Soon...")
   }
 
   return (
