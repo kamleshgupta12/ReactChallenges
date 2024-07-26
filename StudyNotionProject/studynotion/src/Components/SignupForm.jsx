@@ -43,7 +43,7 @@ function SignupForm({ setLogged }) {
     }
     return (
         <>
-            <div>
+            <div>       
                 <div className="border bg-[#e7e7e7c5] rounded-3xl flex w-[165px] justify-center items-center">
                     <button className={`${acountType=== "student" ? "rounded-3xl w-[100%] py-2  bg-[#6652ff] text-white font-medium" : "px-3 text-[#333] font-medium transition-all duration-200"}`} onClick={()=>setAcountType('student')}>Student</button>
                     <button className={`${acountType=== "instructor" ? "rounded-3xl w-[100%] py-[8px]  bg-[#6652ff] text-white  font-medium" : "px-3 text-[#333] font-medium transition-all duration-200"}`} onClick={()=>setAcountType('instructor')}>Instructor</button>
